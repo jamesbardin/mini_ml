@@ -4,6 +4,9 @@
 
 
 This repository contains the project repository for Harvard's
-CS 51 class, Abstraction and Design in Computation.
+Abstraction and Design in Computation.
 
-For more information, see [https://cs51.io](https://cs51.io). 
+
+The implementation of this OCaml subset MiniML is in the form of
+an interpreter for expressions of the language written in OCaml itself,
+a metacircular interpreter.
