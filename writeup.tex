@@ -1,0 +1,55 @@
+\documentclass[12pt]{article}
+\usepackage[margin=0.9in]{geometry}                
+\geometry{letterpaper}                  
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{hyperref, multicol}
+\usepackage[utf8]{inputenc}
+\hypersetup{colorlinks=false, allcolors=blue}
+
+\newcommand{\SD}{\textnormal{SD}}
+\newcommand{\var}{\textnormal{Var}}
+\newcommand{\cov}{\textnormal{Cov}} 
+\newcommand{\corr}{\textnormal{Corr}}
+
+\newcommand{\Bern}{\textnormal{Bern}}
+\newcommand{\Bin}{\textnormal{Bin}}
+\newcommand{\HGeom}{\textnormal{HGeom}}
+\newcommand{\Geom}{\textnormal{Geom}}
+\newcommand{\FS}{\textnormal{FS}}
+\newcommand{\Pois}{\textnormal{Pois}}
+\newcommand{\Unif}{\textnormal{Unif}}
+\newcommand{\Expo}{\textnormal{Expo}}
+\newcommand{\Beta}{\textnormal{Beta}}
+\newcommand{\Gam}{\textnormal{Gamma}}
+\newcommand{\N}{\mathcal{N}}
+
+\newcommand{\noin}{\noindent}                    
+                        
+\begin{document}
+ 
+\title{CS51 Final Project Write-up}
+\author{James Bardin}
+\date{4 May 2022}
+\maketitle
+
+\bigskip
+
+\section{Extensions}
+\noin The extension I chose to implement for my Final Project was an interpreter that manifests lexical scope instead of dynamic. The different with this interpreter is that unlike dynamic scoping, in lexical scoping the functions are evaluated in the environment created when the function is defined. \newline
+
+The big difference between eval d and eval l are the fun and app matches. We will start with the evaluation of a function. The difference made in eval l from eval d is that the function returns a closure containing the function and the env when it is created.  So, we have something along the lines of,
+
+\begin{equation}
+    \text{Fun (f, x) $\longrightarrow$ Closure (exp, env)}
+\end{equation}
+
+And similarly when a function application is evaluated, the body is evaluated with the environment from the same closure.
+
+I tested both of the evals using the recommended expressions given in the textbook assignment description and found that they both evaluated to their correct corresponding values.
+
+So, the changes are not massive between the two scopes. If I had more time what could have been done is to make a single generic evaluation function, and include another input like a boolean or similar idea, if there are for instance 3 scopes, and have "if, then" statements to evaluate with different scopes. This, would have been a nice way to shorten the code, and clearly show the differences between the inter workings of the different scopes. But, I ran out of time and could not get this working in time. 
+
+
+
+ \end{document}
